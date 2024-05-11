@@ -7,7 +7,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://borincgal:password2003@school.myk6u1p.mongodb.net/?retryWrites=true&w=majority&appName=school",
+  "",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
