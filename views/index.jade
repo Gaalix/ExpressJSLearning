@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  p Welcome to #{title}, here you can view all the questions
+  div.question-container
+  each question in questions
+    div.question-box
+      h2= question.title
+      p= question.description
+      p= question.postedAt
+      p
+        a(href='questions/' + question._id) View question

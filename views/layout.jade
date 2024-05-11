@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if session.userId
+      nav
+        ul
+          li
+            a.logo(href='/') CopyPasta Overlord
+          li
+            a(href='/questions/publish') Publish
+          li
+            a(href='/users/logout') Logout
+          li
+            a(href='/users/profile') Profile
+    else
+      nav
+        ul
+          li
+            a.logo(href='/') CopyPasta Overlord
+          li
+            a(href='/users/login') Login
+          li
+            a(href='/users/register') Register
+    block content

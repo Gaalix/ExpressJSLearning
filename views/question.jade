@@ -1,0 +1,74 @@
+extends layout
+
+block content 
+    h2 Question:
+    div.glass-card
+        h2= question.title
+        p= question.description
+        p= question.postedAt
+
+    h2 Answers: 
+    if question.postedBy == session.userId
+        if acceptedAnswer
+            p Accepted answer: 
+            div.glass-card
+                each answer in answers
+                    if acceptedAnswer.toString() == answer.id.toString()
+                        p Answer:  #{answer.answerText}
+                        p Answered by: #{answer.answeredBy.username}
+                        p= answer.answeredAt
+            each answer in answers
+                if acceptedAnswer.toString() != answer.id.toString()
+                    div.glass-card
+                        p Answer:  #{answer.answerText}
+                        p Answered by: #{answer.answeredBy.username}
+                        p= answer.answeredAt
+        else 
+            p You have not accepted any answer yet
+            each answer in answers
+                div.glass-card
+                    p= answer.answerText
+                    p Answered by: #{answer.answeredBy.username}
+                    p= answer.answeredAt
+                    form(method='post', action='/questions/' + question.id + '/accept')
+                        input(type='hidden', name='answerId', value=answer.id)
+                        input(type='hidden', name='questionId', value=question.id)
+                        input(type='submit', value='Accept answer') 
+    else
+        if acceptedAnswer
+            p Accepted answer: 
+            div.glass-card
+                each answer in answers
+                    if acceptedAnswer.toString() == answer.id.toString()
+                        p Answer:  #{answer.answerText}
+                        p Answered by: #{answer.answeredBy.username}
+                        p= answer.answeredAt
+            each answer in answers
+                if acceptedAnswer.toString() != answer.id.toString()
+                    div.glass-card
+                        p Answer:  #{answer.answerText}
+                        p Answered by: #{answer.answeredBy.username}
+                        p= answer.answeredAt
+        else 
+            p No answer has been accepted yet
+            each answer in answers
+                div.glass-card
+                    p Answer:  #{answer.answerText}
+                    p Answered by: #{answer.answeredBy.username}
+                    p= answer.answeredAt
+
+    h2 Answer this question
+    if session.userId
+        div.glass-card
+            form(method='post', action='/questions/' + question.id + '/answer')
+                div 
+                    label(for='answerText') Your Answer:
+                    textarea(name='answerText', id='answerText', required)
+                div
+                    input(type='hidden', name='questionId', value=question.id)
+                    input(type='submit', value='Answer')
+    else 
+        p You need to be logged in to answer this question
+
+    p
+        a(href='/') Back to questions

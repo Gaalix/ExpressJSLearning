@@ -1,0 +1,140 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #b0defa;
+}
+
+a {
+  color: #00b7ff;
+}
+
+/* Style the navigation bar */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; /* Ensure no padding */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border: 1px solid rgba(0, 183, 255, 0.5); /* Semi-transparent border */
+  backdrop-filter: blur(10px); /* Blur the background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+nav ul li {
+  display: flex;
+  align-items: center; /* Center text within each list item */
+}
+
+nav ul li a {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+nav ul li a:hover {
+  color: #00b7ff;
+}
+
+/* Style for question container */
+.question-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.question-box {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border: 1px solid rgba(0, 183, 255, 0.5); /* Semi-transparent border */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  backdrop-filter: blur(10px); /* Blur the background */
+  width: 50%; /* Set a width */
+}
+
+.question-box h2,
+.question-box p {
+  margin-bottom: 10px;
+}
+
+.question-box a {
+  display: inline-block;
+  background-color: #00b7ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.question-box a:hover {
+  background-color: #009ad8;
+}
+
+/* Style for logo */
+nav ul li a.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Style for forms */
+form {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border: 1px solid rgba(0, 183, 255, 0.5); /* Semi-transparent border */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  backdrop-filter: blur(10px); /* Blur the background */
+  width: 60%; /* Set a width */
+}
+
+/* Style for form elements */
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+form input[type="submit"] {
+  background-color: #00b7ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #009ad8;
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border: 1px solid rgba(0, 183, 255, 0.5); /* Semi-transparent border */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  backdrop-filter: blur(10px); /* Blur the background */
+  width: 60%; /* Set a width */
+}
